@@ -1,8 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" 
+    prefix="fn" %> 
 
 <spring:url var="css" value="/resources/css"></spring:url>
 <spring:url var="js" value="/resources/js"></spring:url>
@@ -69,6 +72,13 @@
 
 		<%@include file="contact.jsp"%>
 	</c:if>
+	
+	<!-- Load only when user clicks All products or Category products -->
+	<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+
+		<%@include file="listProducts.jsp"%>
+	</c:if>
+	
 </div>
 
 	<!-- Footer -->
