@@ -36,7 +36,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		category = new Category();
 		category.setId(3);
 		category.setName("Laptop");
-		category.setDescription("some laptop description");
+		category.setDescription("some laptop description..my favorite laptop");
 		category.setImageURL("CAT_3");
 
 		categories.add(category);
